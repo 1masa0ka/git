@@ -13,7 +13,7 @@ pass_in = st.text_input('PASSWORD')
 
 if pass_in==pass_true:
   st.write("OK")
- else:
+else:
   st.write("パスワードが違います")
 
 
