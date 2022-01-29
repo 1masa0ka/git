@@ -23,12 +23,18 @@ else:
 if pass_st==1:
   filename = "./DATA.zip"
   with zipfile.ZipFile(filename, "r") as zp:
-    zp.extractall(pwd=pass_in.encode("utf-8"))
+    for info in zp.infolist():
+        # 「zipファイル名/」については処理をしない    
+      with zp.open(info.filename,pwd=pass_in.encode("utf-8")) as img_file:
+        # 画像のバイナリデータを読み込む
+        img_bin = io.BytesIO(img_file.read())
+        # バイナリデータをpillowから開く
+        st.image(image, caption='Sunrise by the mountains')
+    #zp.extractall(pwd=pass_in.encode("utf-8"))
     st.write("The extract is complete.")
         
   st.sidebar.write('テーマ選択')
   
-  image = Image.open('1.png')
-  st.image(image, caption='Sunrise by the mountains')
+  
 
   
