@@ -4,6 +4,7 @@ import datetime
 import re
 import csv
 import zipfile
+import io
 from PIL import Image
 
 st.title('研究紹介')
