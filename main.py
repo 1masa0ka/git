@@ -30,7 +30,7 @@ if pass_st==1:
         # 画像のバイナリデータを読み込む
         img_bin = io.BytesIO(img_file.read())
         # バイナリデータをpillowから開く
-        st.image(image, caption='Sunrise by the mountains')
+        st.image(img_bin, caption='Sunrise by the mountains')
     #zp.extractall(pwd=pass_in.encode("utf-8"))
     st.write("The extract is complete.")
         
