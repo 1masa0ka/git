@@ -17,4 +17,4 @@ st.subheader('現在の予約状況')
 KEY = st.secrets.AzureApiKey.key
 
 
-st.write(KEY)
+
