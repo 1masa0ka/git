@@ -8,7 +8,7 @@ st.title('クリーンルーム予約')
 st.write('荒木研　＠機械工学2号棟　309a室')
 st.subheader('現在の予約状況')
 
-st.write("DB username:", st.secrets["db_username"])
-st.write("DB password:", st.secrets["db_password"])
-st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
+
+st.write("password:", st.secrets["password"])
+
 
