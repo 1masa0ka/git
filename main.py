@@ -21,11 +21,13 @@ else:
 
 if pass_st==1:
   st.sidebar.write('テーマ選択')
+  
   filename = "./DATA.zip"
   path = "./"
   with zipfile.ZipFile(filename, "r") as zp:
       try:
           zp.extractall(path=path, pwd=pass_in.encode("utf-8"))
+          print("The extract is complete.")
       except RuntimeError as e:
           print(e)
 
