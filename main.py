@@ -20,13 +20,11 @@ else:
   st.write("パスワードが違います")
 
 if pass_st==1:
-  st.sidebar.write('テーマ選択')
-  
   filename = "./DATA.zip"
   with zipfile.ZipFile(filename, "r") as zp:
-      try:
-          zp.extractall(pwd=pass_in.encode("utf-8"))
-          st.write("The extract is complete.")
-      except RuntimeError as e:
-          print(e)
-
+    zp.extractall(pwd=pass_in.encode("utf-8"))
+    st.write("The extract is complete.")
+        
+  st.sidebar.write('テーマ選択')
+  
+  st.image('1.png', caption='Sunrise by the mountains')
