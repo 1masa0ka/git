@@ -4,6 +4,7 @@ import datetime
 import re
 import csv
 import zipfile
+from PIL import Image
 
 st.title('研究紹介')
 
@@ -27,4 +28,7 @@ if pass_st==1:
         
   st.sidebar.write('テーマ選択')
   
-  st.image('1.png', caption='Sunrise by the mountains')
+  image = Image.open('1.png')
+  st.image(image, caption='Sunrise by the mountains')
+
+  
