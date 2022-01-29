@@ -27,7 +27,7 @@ if pass_st==1:
   with zipfile.ZipFile(filename, "r") as zp:
       try:
           zp.extractall(path=path, pwd=pass_in.encode("utf-8"))
-          print("The extract is complete.")
+          st.write("The extract is complete.")
       except RuntimeError as e:
           print(e)
 
