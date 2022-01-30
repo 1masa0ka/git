@@ -22,10 +22,10 @@ else:
   st.write("パスワードが違います")
 
 if pass_st==1:
-  st.sidebar.write('テーマ選択')
+  st.sidebar.write('表示')
   slides_1 = st.sidebar.radio("テーマ選択",('1. abc', '2. def'))
+  slides_2 = st.sidebar.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
   
-  slides_2 = st.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
   filename = "./DATA.zip"
   view_name='DATA/'+str(str(slides_1[0]))+str(str(slides_2[0]))
   
@@ -38,7 +38,7 @@ if pass_st==1:
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
       txtdata = txt_file.read().decode('utf_8')
-      st.text(txtdata)
+      st.(txtdata)
       #txt_s=txtdata.split('\n')
       #for i in range(len(txt_s)):
       #  st.write(txt_s[i][:-3])
