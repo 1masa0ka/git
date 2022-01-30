@@ -36,7 +36,7 @@ if pass_st==1:
       img = Image.open(img_bin)
       st.image(img, caption='Sunrise by the mountains')
     #テキスト表示
-    with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
+    with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8"),newline='\n') as txt_file:
       txtdata = txt_file.read().decode('utf_8')
       st.write(txtdata)
       
