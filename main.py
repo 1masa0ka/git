@@ -40,7 +40,7 @@ if pass_st==1:
       txtdata = txt_file.read().decode('utf_8')
       txt_s=txtdata.split('\n')
       for i in range(len(txt_s)):
-        st.write(txt_s[i][:-3],'\n')
+        st.write(txt_s[i][:-3])
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
   st.write("The extract is complete.")
