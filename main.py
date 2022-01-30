@@ -26,14 +26,16 @@ if pass_st==1:
   slides = st.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
   
   filename = "./DATA.zip"
+  view_name='DATA/'+str(str(slides[0]))
+  
   with zipfile.ZipFile(filename, "r") as zp:
     #画像表示
-    with zp.open('DATA/'+str(str(slides[0]))+'.png',pwd=pass_in.encode("utf-8")) as img_file:
+    with zp.open(view_name+'.png',pwd=pass_in.encode("utf-8")) as img_file:
       img_bin = io.BytesIO(img_file.read())
       img = Image.open(img_bin)
       st.image(img, caption='Sunrise by the mountains')
     #テキスト表示
-    with zp.open('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
+    with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
       txtdata = txt_file.read().decode('utf_8')
       st.write(txtdata)
       
