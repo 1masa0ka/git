@@ -35,6 +35,7 @@ if pass_st==1:
     #テキスト表示
     with zp.open('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8"),encoding='UTF-8') as txt_file:
       txtdata = txt_file.read()
+      txtdata.decode('cp932')
       st.write(txtdata)
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
