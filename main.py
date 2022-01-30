@@ -38,7 +38,9 @@ if pass_st==1:
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
       txtdata = txt_file.read().decode('utf_8')
-      st.write(txtdata)
+      txt_s=txtdata.split('\n')
+      for i in range(len(txt_s)):
+        st.write(txt_s[i][:-3],'\n')
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
   st.write("The extract is complete.")
