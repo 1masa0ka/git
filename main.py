@@ -22,11 +22,12 @@ else:
   st.write("パスワードが違います")
 
 if pass_st==1:
+  st.sidebar.write('テーマ選択')
+  slides_1 = st.sidebar.radio("テーマ選択",('1. abc', '2. def'))
   
-  slides = st.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
-  
+  slides_2 = st.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
   filename = "./DATA.zip"
-  view_name='DATA/'+str(str(slides[0]))
+  view_name='DATA/'+str(str(slides_1[0]))+str(str(slides_2[0]))
   
   with zipfile.ZipFile(filename, "r") as zp:
     #画像表示
@@ -42,6 +43,6 @@ if pass_st==1:
   #zp.extractall(pwd=pass_in.encode("utf-8"))
   st.write("The extract is complete.")
         
-  st.sidebar.write('テーマ選択')
+  
 
   
