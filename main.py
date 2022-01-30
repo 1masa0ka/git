@@ -31,6 +31,8 @@ if pass_st==1:
       img_bin = io.BytesIO(img_file.read())
       img = Image.open(img_bin)
       st.image(img, caption='Sunrise by the mountains')
+    with zp.open('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
+      
   #zp.extractall(pwd=pass_in.encode("utf-8"))
   st.write("The extract is complete.")
         
