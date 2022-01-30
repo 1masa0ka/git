@@ -34,7 +34,7 @@ if pass_st==1:
       st.image(img, caption='Sunrise by the mountains')
     #テキスト表示
     archive = zipfile.ZipFile(filename, 'r')
-    txtdata = archive.read('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8"))
+    txtdata = archive.read('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8"),encoding='utf-8')
     st.write(txtdata)
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
