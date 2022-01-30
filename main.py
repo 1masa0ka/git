@@ -34,7 +34,7 @@ if pass_st==1:
       st.image(img, caption='Sunrise by the mountains')
     #テキスト表示
     with zp.open('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
-      txtdata = txt_file.read()
+      txtdata = txt_file.read(coding="utf-8")
       st.write(txtdata)
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
