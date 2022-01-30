@@ -27,11 +27,15 @@ if pass_st==1:
   
   filename = "./DATA.zip"
   with zipfile.ZipFile(filename, "r") as zp:
+    #画像表示
     with zp.open('DATA/'+str(str(slides[0]))+'.png',pwd=pass_in.encode("utf-8")) as img_file:
       img_bin = io.BytesIO(img_file.read())
       img = Image.open(img_bin)
       st.image(img, caption='Sunrise by the mountains')
-    with zp.open('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
+    #テキスト表示
+    archive = zipfile.ZipFile(filename, 'r')
+    txtdata = archive.read('DATA/'+str(str(slides[0]))+'.txt',pwd=pass_in.encode("utf-8"))
+    st.write(txtdata)
       
   #zp.extractall(pwd=pass_in.encode("utf-8"))
   st.write("The extract is complete.")
