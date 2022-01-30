@@ -22,7 +22,7 @@ else:
   st.write("パスワードが違います")
 
 if pass_st==1:
-  filename = "./DATA.zip"
+  filename = "./DATA.zip/DATA"
   with zipfile.ZipFile(filename, "r") as zp:
     for info in zp.infolist():
         # 「zipファイル名/」については処理をしない    
