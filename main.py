@@ -31,7 +31,7 @@ if pass_st==1:
   
   with zipfile.ZipFile(filename, "r") as zp:
     #画像表示
-    with zp.open(view_name+'.',pwd=pass_in.encode("utf-8")) as img_file:
+    with zp.open(view_name+'.JPG',pwd=pass_in.encode("utf-8")) as img_file:
       img_bin = io.BytesIO(img_file.read())
       img = Image.open(img_bin)
       st.image(img, caption='Sunrise by the mountains')
