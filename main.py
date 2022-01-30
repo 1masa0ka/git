@@ -41,7 +41,7 @@ if pass_st==1:
       #st.write(txtdata)
       txt_s=txtdata.split('\n')
       for i in range(len(txt_s)):
-        st.write(txt_s[i][:-3])
+        st.write(txt_s[i])
       
 
         
