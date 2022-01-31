@@ -9,11 +9,10 @@ from PIL import Image
 
 st.title('研究紹介')
 
-pass_true=st.secrets["password"]
-pass_in = st.text_input('PASSWORD')
 pass_st=0
-
-while pass_st==0:
+if pass_st==0:
+  pass_true=st.secrets["password"]
+  pass_in = st.text_input('PASSWORD')
   if pass_in==pass_true:
     #st.write("OK")
     pass_st=1
