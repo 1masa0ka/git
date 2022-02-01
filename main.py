@@ -29,7 +29,7 @@ if pass_st==1:
     slides_2 = st.sidebar.radio("スライド番号",('1. 背景・目的', '2. 背景・目的', '3. 実験方法(試料表面)','4. 実験方法(観察装置)',
                                           '5. 結果(観察)','6. 結果(成長分析)','7. 考察(仮説)','8. 考察(先行研究)','9. 考察(本研究)'))
   else:
-    slides_2 = st.sidebar.radio("スライド番号",('1. abc', '2. def', '3. efg','4. aop','5. tet'))
+    slides_2 = st.sidebar.radio("スライド番号",('1. 背景・目的', '2. 背景・目的', '3. 実験方法（操作）','4. 実験方法（センサ）','5. 実験結果','6. 考察'))
   
   filename = "./DATA.zip"
   view_name='DATA/'+str(str(slides_1[0]))+str(str(slides_2[0]))
