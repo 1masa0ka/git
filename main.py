@@ -39,7 +39,7 @@ if pass_st==1:
     with zp.open(view_name+'.JPG',pwd=pass_in.encode("utf-8")) as img_file:
       img_bin = io.BytesIO(img_file.read())
       img = Image.open(img_bin)
-      st.image(img, caption='Sunrise by the mountains')
+      st.image(img)
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_in.encode("utf-8")) as txt_file:
       txtdata = txt_file.read().decode('utf_8')
