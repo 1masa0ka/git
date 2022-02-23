@@ -10,11 +10,12 @@ from PIL import Image
 st.title('研究紹介')
 
 pass_true=st.secrets["password"]
+pass_true2=st.secrets["password2"]
 pass_st=0
 pass_in = st.text_input('PASSWORD')
 
 if pass_st==0:
-  if pass_in==pass_true:
+  if pass_in==pass_true or pass_in==pass_true2:
     #st.write("OK")
     pass_st=1
   elif pass_in=='':
