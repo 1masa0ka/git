@@ -40,7 +40,7 @@ if pass_st==1:
   
   with zipfile.ZipFile(filename, "r") as zp:
     #画像表示
-    if view_name!='39':
+    if view_name!='DATA/39':
       with zp.open(view_name+'.JPG',pwd=pass_true.encode("utf-8")) as img_file:
         img_bin = io.BytesIO(img_file.read())
         img = Image.open(img_bin)
