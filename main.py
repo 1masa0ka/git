@@ -33,17 +33,24 @@ if pass_st==1:
     slides_2 = st.sidebar.radio("スライド番号",('1. 背景・目的', '2. 背景・目的', '3. 実験方法（操作）','4. 実験方法（センサ）','5. 実験結果','6. 考察'))
   
   else:
-    slides_2 = st.sidebar.radio("スライド番号",('1. 背景・目的', '2. 疑似気泡画像合成アルゴリズム', '3. 気泡認識①','4. 気泡認識②','5. CNNアーキテクチャの構造','6．結果','7．結果','8．まとめ・今後の課題'))
+    slides_2 = st.sidebar.radio("スライド番号",('1. 背景・目的', '2. 疑似気泡画像合成アルゴリズム', '3. 気泡認識①','4. 気泡認識②','5. CNNアーキテクチャの構造','6．結果','7．結果','8．まとめ・今後の課題','9．動画(追記)'))
   
   filename = "./DATA.zip"
   view_name='DATA/'+str(str(slides_1[0]))+str(str(slides_2[0]))
   
   with zipfile.ZipFile(filename, "r") as zp:
     #画像表示
-    with zp.open(view_name+'.JPG',pwd=pass_true.encode("utf-8")) as img_file:
-      img_bin = io.BytesIO(img_file.read())
-      img = Image.open(img_bin)
-      st.image(img)
+    if view_name!='39':
+      with zp.open(view_name+'.JPG',pwd=pass_true.encode("utf-8")) as img_file:
+        img_bin = io.BytesIO(img_file.read())
+        img = Image.open(img_bin)
+        st.image(img)
+    else:
+      with zp.open(view_name+'.mp4',pwd=pass_true.encode("utf-8")) as movie_file:
+        movie_bin = io.BytesIO(movie_file.read())
+        movie = movie_bin.read()
+        st.video(movie) 
+    
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_true.encode("utf-8")) as txt_file:
       txtdata = txt_file.read().decode('utf_8')
