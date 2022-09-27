@@ -46,7 +46,7 @@ if pass_st==1:
         img = Image.open(img_bin)
         st.image(img)
     else:
-      with zp.open(view_name+'.mp4','rb',pwd=pass_true.encode("utf-8")) as movie_file:
+      with zp.open(view_name+'.mp4','r',pwd=pass_true.encode("utf-8")) as movie_file:
         #movie_bin = io.BytesIO(movie_file.read())
         movie = movie_file.read()
         st.video(movie) 
@@ -59,8 +59,5 @@ if pass_st==1:
       for i in range(len(txt_s)):
         st.write(txt_s[i])
       
-
-        
-  
-
-  
+      
+      
