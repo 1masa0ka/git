@@ -45,12 +45,11 @@ if pass_st==1:
         img_bin = io.BytesIO(img_file.read())
         img = Image.open(img_bin)
         st.image(img)
+    #動画表示
     else:
-      with zp.open(view_name+'.mp4',pwd=pass_true.encode("utf-8")) as movie_file:
-        movie_bin = io.BytesIO(movie_file.read())
-        #movie = open(movie_bin,'rb')
-        #movie = movie.read()
-        st.video(movie_bin,format="video/mp4", start_time=0) 
+      video_file = open('bubble.mp4', 'rb')
+      video_bytes = video_file.read()
+      st.video(video_bytes) 
     
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_true.encode("utf-8")) as txt_file:
