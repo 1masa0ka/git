@@ -47,9 +47,9 @@ if pass_st==1:
         st.image(img)
     #動画表示
     else:
-      video_file = open('bubble.mp4', 'rb')
-      video_bytes = video_file.read()
-      st.video(video_bytes) 
+      #video_file = open('bubble.mp4', 'rb')
+      #video_bytes = video_file.read()
+      st.video('bubble.mp4') 
     
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_true.encode("utf-8")) as txt_file:
