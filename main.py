@@ -48,9 +48,9 @@ if pass_st==1:
     else:
       with zp.open(view_name+'.mp4',pwd=pass_true.encode("utf-8")) as movie_file:
         movie_bin = io.BytesIO(movie_file.read())
-        movie = open(movie_bin,'rb')
-        movie = movie.read()
-        st.video(movie) 
+        #movie = open(movie_bin,'rb')
+        #movie = movie.read()
+        st.video(movie_bin) 
     
     #テキスト表示
     with zp.open(view_name+'.txt',pwd=pass_true.encode("utf-8")) as txt_file:
